@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs'; // Observable is required because build task throws otherwise errors.
 
 
 @Injectable({

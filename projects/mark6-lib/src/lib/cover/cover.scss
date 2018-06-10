@@ -9,211 +9,229 @@ $ProfileInteractMenuMobile: 64px;
 
 $avatarTabletOffset: false;
 
+$progressValueColour: #e53935;
+$progressBarBgColour: lighten($progressValueColour, 32%);
+
 .mark6-cover {
-  width: 100%;
-  margin-bottom: $avatarMobileSize - $SpaceBetweenCoverItemsMobile * 2 + $SpaceBetweenCoverItemsMobile + 32px + $SpaceBetweenCoverItemsMobile + $ProfileInteractMenuMobile; // 32px ist in dem fall die Height die unser H2 erreicht. Dirty, aber es gibt leider keine möglichkeit die mit SCSS aus dem HTML Dom auszulesen.
-  z-index: 200;
-  position: relative;
-  display: block;
-  @include mediaMin($resTabletSmall) {
-    margin-bottom: $ProfileMainMenuHeight + $SpaceBetweenCoverItemsMobile;
-  }
-  @include mediaMin($resDesktop) {
-    margin-bottom: $SpaceBetweenCoverItemsDesktop;
-  }
-  &:hover, &.uploading {
-    .cover-item {
-      app-dropdown.cover-edit {
-        background-color: rgba(0, 0, 0, 0.82);
-      }
-      .cover-overlay {
-        background-color: rgba(255, 255, 255, 0.48);
-      }
-    }
-  }
-
-  .cover-item {
-    @include aspect();
-    @include ratio(40%);
-    display: block;
-    overflow: hidden;
+    width: 100%;
+    margin-bottom: $avatarMobileSize - $SpaceBetweenCoverItemsMobile * 2 + $SpaceBetweenCoverItemsMobile + 32px + $SpaceBetweenCoverItemsMobile + $ProfileInteractMenuMobile; // 32px ist in dem fall die Height die unser H2 erreicht. Dirty, aber es gibt leider keine möglichkeit die mit SCSS aus dem HTML Dom auszulesen.
+    z-index: 200;
     position: relative;
-    background-color: #444444;
-
-    .mark6-drop-down {
-      top: 8px;
-      right: 8px;
-      z-index: 500;
-      position: absolute;
-      transition-duration: 0.4s;
-      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-      transition-property: background-color;
-      background-color: rgba(0, 0, 0, 0.64);
-      @include mediaMin($resDesktop) {
-        top: 16px;
-        right: 16px;
-      }
-      .mark6-drop-down-trigger {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        @include mediaMin($resDesktop) {
-          width: inherit;
-          height: 64px;
-          padding: 0 24px;
-        }
-        i {
-          color: #fff;
-          display: block;
-        }
-        span {
-          color: white;
-          line-height: 24px;
-          padding-left: 16px;
-          display: none;
-          @include mediaMin($resDesktop) {
-            display: block;
-          }
-        }
-      }
-    }
-
-    .cover-overlay {
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 100;
-      position: absolute;
-      transition-duration: 0.4s;
-      background-color: rgba(255, 255, 255, 0);
-      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-      transition-property: background-color;
-      background-repeat: repeat-x;
-      background-position: bottom;
-      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABeCAYAAADizX6rAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjFCMDhFMTU2QkJBNjExRTU4NDAzRjZFQ0I3Q0VERUExIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjFCMDhFMTU3QkJBNjExRTU4NDAzRjZFQ0I3Q0VERUExIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MUIwOEUxNTRCQkE2MTFFNTg0MDNGNkVDQjdDRURFQTEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MUIwOEUxNTVCQkE2MTFFNTg0MDNGNkVDQjdDRURFQTEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz755XFrAAAAN0lEQVR42mJgYGBgZAISDHCCEQsLmwQjeRL4FSO4TITVMRIpS6Y2Yl1PkrcYKQg/IlgQLkCAAQDlwgD6ItVoiwAAAABJRU5ErkJggg==');
-    }
-
-    img.cover {
-      width: 100%;
-      top: 0; // TODO An das Cover Component mit übergeben damit man im Frontend den Top wert bestimmen kann.
-      position: absolute;
-    }
-
-    .mat-progress-bar {
-      height: 10px;
-      z-index: 100;
-      left: 0;
-      bottom: 0;
-      position: absolute;
-    }
-  }
-
-  .mark6-avatar {
-    width: $avatarMobileSize;
-    left: 50%;
-    bottom: 0;
-    z-index: 100;
-    transform: translate(-50%, #{$avatarMobileSize - $SpaceBetweenCoverItemsMobile * 2});
-    position: absolute;
-    background-color: #fff;
-    border: 4px solid #fff;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    display: block;
     @include mediaMin($resTabletSmall) {
-      width: $avatarTabletSmallSize;
-      left: $SpaceBetweenCoverItemsMobile;
-      transform: translate(0, 0);
-      @if ($avatarTabletOffset == true) {
-        bottom: -$SpaceBetweenCoverItemsMobile;
-      } @else {
-        bottom: $SpaceBetweenCoverItemsMobile;
-      }
-    }
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    left: 50%;
-    bottom: 0;
-    z-index: 500;
-    transform: translate(-50%, calc(100% - -#{$avatarMobileSize - $SpaceBetweenCoverItemsMobile * 2 + $SpaceBetweenCoverItemsMobile}));
-    position: absolute;
-    color: #000;
-    font-size: 24px;
-    font-weight: 300;
-    @include mediaMin($resTabletSmall) {
-      color: #fff;
-      text-shadow: 0 0 3px rgba(0, 0, 0, .8);
-      left: $avatarTabletSmallSize + $SpaceBetweenCoverItemsMobile * 2;
-      bottom: $SpaceBetweenCoverItemsMobile;
-      display: block;
-      font-size: 32px;
-      font-weight: 400;
-      transform: translate(0, 0);
-    }
-  }
-
-  app-profile-main-menu, app-user-settings-main-menu {
-    @include mediaMax($resTabletSmall) {
-      display: none;
+        margin-bottom: $ProfileMainMenuHeight + $SpaceBetweenCoverItemsMobile;
     }
     @include mediaMin($resDesktop) {
-      display: none;
+        margin-bottom: $SpaceBetweenCoverItemsDesktop;
     }
-    section {
-      width: 100%;
-      height: $ProfileMainMenuHeight;
-      @if ($avatarTabletOffset == true) {
-        padding-left: $avatarTabletSmallSize + $SpaceBetweenCoverItemsMobile * 1; // * 2 Wenn Menu Item Padding nicht reicht
-      }
-      left: 0;
-      bottom: 0;
-      transform: translate(0, 100%);
-      position: absolute;
-      background-color: #fff;
-      display: flex;
-      align-items: center;
-      border-width: 0 1px 1px 1px;
-      border-style: solid;
-      border-color: #e5e5e5;
-      ul {
-        display: flex;
-        li {
-          padding: 12px 24px;
-          color: #6d6d6d;
-          font-size: 13px;
-          font-weight: 500;
-          &.divider {
-            width: 1px;
-            height: 24px;
-            margin: 8px 0;
-            padding: 0;
-            background-color: #e5e5e5;
-          }
+    &:hover, &.uploading {
+        .cover-item {
+            app-dropdown.cover-edit {
+                background-color: rgba(0, 0, 0, 0.82);
+            }
+            .cover-overlay {
+                background-color: rgba(255, 255, 255, 0.48);
+            }
         }
-      }
     }
-  }
 
-  app-profile-interact-menu {
-    margin: 0;
-    z-index: 600;
-    position: absolute;
-    @include mediaMax($resTabletSmall) {
-      width: 100%;
-      height: $ProfileInteractMenuMobile;
-      left: 0;
-      bottom: 0;
-      background-color: #fff;
-      transform: translate(0, calc(100% - -#{$avatarMobileSize - $SpaceBetweenCoverItemsMobile * 2 + $SpaceBetweenCoverItemsMobile + 32px + $SpaceBetweenCoverItemsMobile})); // 32px ist in dem fall die Height die unser H2 erreicht. Dirty, aber es gibt leider keine möglichkeit die mit SCSS aus dem HTML Dom auszulesen.
+    .cover-item {
+        @include aspect();
+        @include ratio(40%);
+        display: block;
+        overflow: hidden;
+        position: relative;
+        background-color: #444444;
+
+        .mark6-drop-down {
+            top: 8px;
+            right: 8px;
+            z-index: 500;
+            position: absolute;
+            transition-duration: 0.4s;
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-property: background-color;
+            background-color: rgba(0, 0, 0, 0.64);
+            @include mediaMin($resDesktop) {
+                top: 16px;
+                right: 16px;
+            }
+            .mark6-drop-down-trigger {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include mediaMin($resDesktop) {
+                    width: inherit;
+                    height: 64px;
+                    padding: 0 24px;
+                }
+                i {
+                    color: #fff;
+                    display: block;
+                }
+                span {
+                    color: white;
+                    line-height: 24px;
+                    padding-left: 16px;
+                    display: none;
+                    @include mediaMin($resDesktop) {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .cover-overlay {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            position: absolute;
+            transition-duration: 0.4s;
+            background-color: rgba(255, 255, 255, 0);
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-property: background-color;
+            background-repeat: repeat-x;
+            background-position: bottom;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAABeCAYAAADizX6rAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjFCMDhFMTU2QkJBNjExRTU4NDAzRjZFQ0I3Q0VERUExIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjFCMDhFMTU3QkJBNjExRTU4NDAzRjZFQ0I3Q0VERUExIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MUIwOEUxNTRCQkE2MTFFNTg0MDNGNkVDQjdDRURFQTEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MUIwOEUxNTVCQkE2MTFFNTg0MDNGNkVDQjdDRURFQTEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz755XFrAAAAN0lEQVR42mJgYGBgZAISDHCCEQsLmwQjeRL4FSO4TITVMRIpS6Y2Yl1PkrcYKQg/IlgQLkCAAQDlwgD6ItVoiwAAAABJRU5ErkJggg==');
+        }
+
+        img.cover {
+            width: 100%;
+            top: 0; // TODO An das Cover Component mit übergeben damit man im Frontend den Top wert bestimmen kann.
+            position: absolute;
+        }
+
+        progress {
+            width: 100%;
+            height: 10px;
+            left: 0;
+            bottom: 0;
+            z-index: 100;
+            position: absolute;
+            opacity: 0.64;
+            border: none;
+            -webkit-appearance: none;
+            // Value Bar
+            &[value]::-webkit-progress-value {
+                background: $progressValueColour;
+            }
+            // Bar Background
+            &[value]::-moz-progress-bar {
+                background: $progressBarBgColour;
+            }
+            &[value]::-webkit-progress-bar {
+                background: $progressBarBgColour;
+            }
+        }
     }
-    @include mediaMin($resTabletSmall) {
-      bottom: $SpaceBetweenCoverItemsMobile;
-      right: $SpaceBetweenCoverItemsMobile;
-      border: 1px solid #e5e5e5;
+
+    .mark6-avatar {
+        width: $avatarMobileSize;
+        left: 50%;
+        bottom: 0;
+        z-index: 100;
+        transform: translate(-50%, #{$avatarMobileSize - $SpaceBetweenCoverItemsMobile * 2});
+        position: absolute;
+        background-color: #fff;
+        border: 4px solid #fff;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+        @include mediaMin($resTabletSmall) {
+            width: $avatarTabletSmallSize;
+            left: $SpaceBetweenCoverItemsMobile;
+            transform: translate(0, 0);
+            @if ($avatarTabletOffset == true) {
+                bottom: -$SpaceBetweenCoverItemsMobile;
+            } @else {
+                bottom: $SpaceBetweenCoverItemsMobile;
+            }
+        }
     }
-  }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        left: 50%;
+        bottom: 0;
+        z-index: 500;
+        transform: translate(-50%, calc(100% - -#{$avatarMobileSize - $SpaceBetweenCoverItemsMobile * 2 + $SpaceBetweenCoverItemsMobile}));
+        position: absolute;
+        color: #000;
+        font-size: 24px;
+        font-weight: 300;
+        @include mediaMin($resTabletSmall) {
+            color: #fff;
+            text-shadow: 0 0 3px rgba(0, 0, 0, .8);
+            left: $avatarTabletSmallSize + $SpaceBetweenCoverItemsMobile * 2;
+            bottom: $SpaceBetweenCoverItemsMobile;
+            display: block;
+            font-size: 32px;
+            font-weight: 400;
+            transform: translate(0, 0);
+        }
+    }
+
+    app-profile-main-menu, app-user-settings-main-menu {
+        @include mediaMax($resTabletSmall) {
+            display: none;
+        }
+        @include mediaMin($resDesktop) {
+            display: none;
+        }
+        section {
+            width: 100%;
+            height: $ProfileMainMenuHeight;
+            @if ($avatarTabletOffset == true) {
+                padding-left: $avatarTabletSmallSize + $SpaceBetweenCoverItemsMobile * 1; // * 2 Wenn Menu Item Padding nicht reicht
+            }
+            left: 0;
+            bottom: 0;
+            transform: translate(0, 100%);
+            position: absolute;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            border-width: 0 1px 1px 1px;
+            border-style: solid;
+            border-color: #e5e5e5;
+            ul {
+                display: flex;
+                li {
+                    padding: 12px 24px;
+                    color: #6d6d6d;
+                    font-size: 13px;
+                    font-weight: 500;
+                    &.divider {
+                        width: 1px;
+                        height: 24px;
+                        margin: 8px 0;
+                        padding: 0;
+                        background-color: #e5e5e5;
+                    }
+                }
+            }
+        }
+    }
+
+    app-profile-interact-menu {
+        margin: 0;
+        z-index: 600;
+        position: absolute;
+        @include mediaMax($resTabletSmall) {
+            width: 100%;
+            height: $ProfileInteractMenuMobile;
+            left: 0;
+            bottom: 0;
+            background-color: #fff;
+            transform: translate(0, calc(100% - -#{$avatarMobileSize - $SpaceBetweenCoverItemsMobile * 2 + $SpaceBetweenCoverItemsMobile + 32px + $SpaceBetweenCoverItemsMobile})); // 32px ist in dem fall die Height die unser H2 erreicht. Dirty, aber es gibt leider keine möglichkeit die mit SCSS aus dem HTML Dom auszulesen.
+        }
+        @include mediaMin($resTabletSmall) {
+            bottom: $SpaceBetweenCoverItemsMobile;
+            right: $SpaceBetweenCoverItemsMobile;
+            border: 1px solid #e5e5e5;
+        }
+    }
 
 }

@@ -4,4 +4,6 @@
 
 <ng-content select="mark6-avatar-image"></ng-content>
 
-<mat-progress-bar mode="determinate" [value]="uploadProgress" *ngIf="uploadProgress && editMode"></mat-progress-bar>
+<ng-content select="mark6-avatar-upload"></ng-content>
+
+<progress [value]="uploadProgress" max="100" *ngIf="uploadProgress && editMode"></progress>

@@ -1,5 +1,12 @@
 import {
-    ChangeDetectionStrategy, Component, ElementRef, HostBinding, HostListener, Input, OnDestroy, OnInit,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    HostBinding,
+    HostListener,
+    Input,
+    OnDestroy,
+    OnInit,
     ViewEncapsulation
 } from '@angular/core';
 import {DropDownService} from './drop-down.service';
@@ -11,7 +18,6 @@ import {DropDownService} from './drop-down.service';
  * - mark6-drop-down-trigger
  */
 @Component({
-    moduleId: module.id,
     selector: 'mark6-drop-down',
     exportAs: 'mark6DropDown',
     templateUrl: './drop-down.html',
@@ -19,15 +25,6 @@ import {DropDownService} from './drop-down.service';
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [DropDownService]
-    /* https://stackoverflow.com/questions/50163195/angular5-hostbinding-instead-of-host
-    host: {
-        'class': 'mark6-drop-down',
-        '[class.pos-x-right]': 'positionX === "right"',
-        '[class.pos-x-left]': 'positionX === "left"',
-        '[class.pos-y-top]': 'positionY === "top"',
-        '[class.pos-y-bottom]': 'positionY === "bottom"',
-    },
-    */
 })
 export class Mark6DropDown implements OnInit, OnDestroy {
 
@@ -131,7 +128,6 @@ export class Mark6DropDown implements OnInit, OnDestroy {
  * DropDownTrigger - Component intended to be used within the `<mark6-drop-down>`.
  */
 @Component({
-    moduleId: module.id,
     selector: 'mark6-drop-down-trigger',
     templateUrl: 'drop-down-trigger.html',
     styleUrls: ['./drop-down-trigger.scss'],
@@ -147,7 +143,6 @@ export class Mark6DropDownTrigger {
  * DropDownOrigin - Component intended to be used within the `<mark6-drop-down>`.
  */
 @Component({
-    moduleId: module.id,
     selector: 'mark6-drop-down-origin',
     templateUrl: 'drop-down-origin.html',
     styleUrls: ['./drop-down-origin.scss'],
@@ -163,7 +158,6 @@ export class Mark6DropDownOrigin {
  * DropDownContent - Component intended to be used within the `<mark6-drop-down>`.
  */
 @Component({
-    moduleId: module.id,
     selector: 'mark6-drop-down-content',
     templateUrl: 'drop-down-content.html',
     styleUrls: ['./drop-down-content.scss'],

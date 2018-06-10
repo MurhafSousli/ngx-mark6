@@ -1,5 +1,4 @@
-import {ChangeDetectionStrategy, Component, HostBinding, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import {Subscription} from 'rxjs/Subscription';
+import {ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
 
 
 /**
@@ -9,7 +8,6 @@ import {Subscription} from 'rxjs/Subscription';
  * - etc...
  */
 @Component({
-    moduleId: module.id,
     selector: 'mark6-avatar',
     exportAs: 'mark6Avatar',
     templateUrl: './avatar.html',
@@ -38,7 +36,6 @@ export class Mark6Avatar {
  * CoverImage - Component intended to be used within the `<mark6-cover>`.
  */
 @Component({
-    moduleId: module.id,
     selector: 'mark6-avatar-image',
     templateUrl: 'avatar-image.html',
     styleUrls: ['./avatar-image.scss'],
@@ -51,7 +48,7 @@ export class Mark6AvatarImage {
     @Input() image;
     @Input() alt;
 
-    public defaultImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN0+A8AAYUBQcxKiF0AAAAASUVORK5CYII='
+    public defaultImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN0+A8AAYUBQcxKiF0AAAAASUVORK5CYII=';
 }
 
 
@@ -59,7 +56,6 @@ export class Mark6AvatarImage {
  * CoverImage - Component intended to be used within the `<mark6-cover>`.
  */
 @Component({
-    moduleId: module.id,
     selector: 'mark6-avatar-content',
     templateUrl: 'avatar-content.html',
     styleUrls: ['./avatar-content.scss'],
@@ -68,4 +64,19 @@ export class Mark6AvatarImage {
 })
 export class Mark6AvatarContent {
     @HostBinding('class') classes = 'mark6-avatar-content';
+}
+
+
+/**
+ * CoverImage - Component intended to be used within the `<mark6-cover>`.
+ */
+@Component({
+    selector: 'mark6-avatar-upload',
+    templateUrl: 'avatar-upload.html',
+    styleUrls: ['./avatar-upload.scss'],
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class Mark6AvatarUpload {
+    @HostBinding('class') classes = 'mark6-avatar-upload';
 }

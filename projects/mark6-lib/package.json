@@ -1,8 +1,16 @@
 {
-  "name": "mark6-lib",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
-  }
+    "name": "@devmonkeys/ngx-mark6",
+    "description": "Basic Components components for Angular",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DevMonkeysDE/ngx-mark6"
+    },
+    "version": "0.0.3-alpha",
+    "license": "MIT",
+    "peerDependencies": {
+        "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+        "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+        "@angular/material": "^6.2.1",
+        "@devmonkeys/scss-elements": "^1.1.4"
+    }
 }

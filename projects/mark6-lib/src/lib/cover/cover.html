@@ -14,7 +14,7 @@
     -->
 
     <!-- TODO @Murhaf - Set uploadProgress to make this progressbar work. -->
-    <mat-progress-bar mode="determinate" [value]="uploadProgress" *ngIf="uploadProgress"></mat-progress-bar>
+    <progress [value]="uploadProgress" max="100" *ngIf="uploadProgress && editMode"></progress>
 
 </div>
 
