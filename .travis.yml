@@ -21,4 +21,4 @@ notifications:
     on_cancel: never
     on_error: never
 script:
-  - npm run build
+  - npm run test
