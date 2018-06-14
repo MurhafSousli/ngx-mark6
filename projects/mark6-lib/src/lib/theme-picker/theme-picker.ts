@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
-import {ThemePickerService} from "./theme-picker.service";
+import {ChangeDetectionStrategy, Component, HostBinding, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {ThemePickerService} from './theme-picker.service';
 
 /**
  * Theme Picker
@@ -8,16 +8,17 @@ import {ThemePickerService} from "./theme-picker.service";
  * - etc...
  */
 @Component({
-    moduleId: module.id,
     selector: 'mark6-theme-picker',
     exportAs: 'mark6ThemePicker',
     templateUrl: './theme-picker.html',
     styleUrls: ['./theme-picker.scss'],
     encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: {'class': 'mark6-theme-picker'}
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ThemePicker implements OnInit {
+export class Mark6ThemePicker implements OnInit {
+
+    @HostBinding('class') classes = 'mark6-theme-picker';
+
     @Input() themes;
     @Input() defaultTheme;
 

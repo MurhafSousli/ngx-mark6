@@ -1,23 +1,23 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FormsModule} from "@angular/forms";
+// import {FormsModule} from '@angular/forms';
 
-import {ThemePicker} from "./theme-picker";
-import {ThemePickerService} from "./theme-picker.service";
+// import {Mark6ThemePicker} from './theme-picker';
+import {ThemePickerService} from './theme-picker.service';
 
 
 @NgModule({
     imports: [
         CommonModule,
-        FormsModule
+        // FormsModule
     ],
     exports: [
-        ThemePicker
+        // Mark6ThemePicker
     ],
     declarations: [
-        ThemePicker
+        // Mark6ThemePicker
     ],
-    providers : [
+    providers: [
         ThemePickerService
     ]
 })

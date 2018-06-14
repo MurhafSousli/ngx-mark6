@@ -1,13 +1,12 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from "rxjs/BehaviorSubject";
-import {OverlayContainer} from "@angular/cdk/overlay";
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable()
 export class ThemePickerService {
 
     private _theme: BehaviorSubject<string> = new BehaviorSubject<string>(null);
 
-    constructor(private overlayContainer: OverlayContainer) {
+    constructor() {
     }
 
     get theme() {
