@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {Mark6DropDown, Mark6DropDownContent, Mark6DropDownOrigin, Mark6DropDownTrigger} from './drop-down';
-import {DropDownService} from './drop-down.service';
+import {Mark6DropDownService} from './drop-down.service';
 
 
 @NgModule({
@@ -21,7 +21,7 @@ import {DropDownService} from './drop-down.service';
         Mark6DropDownContent
     ],
     providers: [
-        DropDownService
+        Mark6DropDownService
     ]
 })
 
