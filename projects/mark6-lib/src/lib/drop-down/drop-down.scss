@@ -10,6 +10,7 @@
                 .mark6-drop-down-origin {
                     i {
                         opacity: 1;
+                        display: block;
                     }
                 }
                 .mark6-drop-down-content {
@@ -99,7 +100,8 @@
             .mark6-drop-down-origin {
                 i {
                     opacity: 0;
-                    transition: all .4s cubic-bezier(.25, .8, .25, 1);
+                    display: none;
+                    transition: opacity .4s cubic-bezier(.25, .8, .25, 1);
                 }
             }
             .mark6-drop-down-content {
