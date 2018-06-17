@@ -9,7 +9,7 @@ import {
     OnInit,
     ViewEncapsulation
 } from '@angular/core';
-import {DropDownService} from './drop-down.service';
+import {Mark6DropDownService} from './drop-down.service';
 
 /**
  * DropDown
@@ -24,7 +24,7 @@ import {DropDownService} from './drop-down.service';
     styleUrls: ['./drop-down.scss'],
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [DropDownService]
+    providers: [Mark6DropDownService]
 })
 export class Mark6DropDown implements OnInit, OnDestroy {
 
@@ -63,7 +63,7 @@ export class Mark6DropDown implements OnInit, OnDestroy {
         this.closeAll(event);
     }
 
-    constructor(private elementRef: ElementRef, private _dropDownService: DropDownService) {
+    constructor(private elementRef: ElementRef, private _dropDownService: Mark6DropDownService) {
     }
 
     toggle(event) {

@@ -5,7 +5,7 @@ import {Observable, Subject} from 'rxjs'; // Observable is required because buil
 @Injectable({
   providedIn: 'root'
 })
-export class DropDownService {
+export class Mark6DropDownService {
 
     // Observable string sources
     private subject = new Subject();
