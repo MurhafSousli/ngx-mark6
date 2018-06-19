@@ -1,5 +1,5 @@
+import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {RouterTestingModule} from '@angular/router/testing';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 
@@ -15,7 +15,6 @@ import {Mark6CoverModule} from '../../projects/mark6-lib/src/lib/cover';
 import {Mark6DropDownModule} from '../../projects/mark6-lib/src/lib/drop-down';
 
 
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -23,7 +22,7 @@ import {Mark6DropDownModule} from '../../projects/mark6-lib/src/lib/drop-down';
         SiteUserProfileComponent
     ],
     imports: [
-        RouterTestingModule,
+        BrowserModule,
         AppRoutingModule,
         // Material 2
         MatButtonModule,
