@@ -28,7 +28,7 @@ jobs:
 
       - run: yarn install
 
-      - run: npm run build mark6-lib --prod
+      - run: yarn build mark6-lib --prod
 
       - save_cache:
           paths:
