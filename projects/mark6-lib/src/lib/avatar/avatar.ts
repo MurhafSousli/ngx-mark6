@@ -13,18 +13,21 @@ import {ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulatio
     templateUrl: './avatar.html',
     styleUrls: ['./avatar.scss'],
     encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    host: {
-        'class': 'mark6-avatar',
-        '[class.uploading]': 'uploadProgress > 0',
-    }
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Mark6Avatar {
 
-    @Input() editMode = false;
+    @HostBinding('class') classes = 'mark6-avatar';
+
+    @HostBinding('class.uploading')
+    get isUploading() {
+        return this.uploadProgress > 0;
+    }
+
+    @Input() public editMode = false;
     // Default Size that we use later to config the Cropper and create a version from the Original Uploaded File.
-    @Input() size = '256x256';
-    @Input() uploadProgress = null;
+    @Input() public size = '256x256';
+    @Input() public uploadProgress = null;
 
     constructor() {
     }
@@ -43,10 +46,11 @@ export class Mark6Avatar {
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Mark6AvatarImage {
-    @HostBinding('class') classes = 'mark6-avatar-image';
 
-    @Input() image;
-    @Input() alt;
+    @HostBinding('class') public classes = 'mark6-avatar-image';
+
+    @Input() public image;
+    @Input() public alt;
 
     public defaultImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN0+A8AAYUBQcxKiF0AAAAASUVORK5CYII=';
 }
@@ -63,7 +67,9 @@ export class Mark6AvatarImage {
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Mark6AvatarContent {
-    @HostBinding('class') classes = 'mark6-avatar-content';
+
+    @HostBinding('class') public classes = 'mark6-avatar-content';
+
 }
 
 
@@ -78,5 +84,7 @@ export class Mark6AvatarContent {
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Mark6AvatarUpload {
-    @HostBinding('class') classes = 'mark6-avatar-upload';
+
+    @HostBinding('class') public classes = 'mark6-avatar-upload';
+
 }
