@@ -1,5 +1,5 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {RouterTestingModule} from '@angular/router/testing';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 
@@ -13,7 +13,7 @@ import {MatButtonModule} from '@angular/material';
 import {Mark6AvatarModule} from '../../projects/mark6-lib/src/lib/avatar';
 import {Mark6CoverModule} from '../../projects/mark6-lib/src/lib/cover';
 import {Mark6DropDownModule} from '../../projects/mark6-lib/src/lib/drop-down';
-import {RouterTestingModule} from '@angular/router/testing';
+
 
 
 @NgModule({
@@ -23,7 +23,6 @@ import {RouterTestingModule} from '@angular/router/testing';
         SiteUserProfileComponent
     ],
     imports: [
-        BrowserModule,
         RouterTestingModule,
         AppRoutingModule,
         // Material 2
