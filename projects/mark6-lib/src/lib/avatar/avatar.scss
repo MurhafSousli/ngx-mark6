@@ -32,7 +32,7 @@ $progressBarBgColour: lighten($progressValueColour, 32%);
         }
     }
 
-    .cover-overlay {
+    .mark6-upload-overlay {
         @include fullOverlay();
         z-index: 200;
         transition-duration: 0.4s;
