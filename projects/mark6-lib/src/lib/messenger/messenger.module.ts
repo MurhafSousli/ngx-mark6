@@ -1,24 +1,21 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-// import {FormsModule} from '@angular/forms';
-
-// import {Mark6ThemePicker} from './theme-picker';
+import {Mark6Messenger} from './messenger';
 
 
 @NgModule({
     imports: [
         CommonModule,
-        // FormsModule
     ],
     exports: [
-        // Mark6ThemePicker
+        Mark6Messenger
     ],
     declarations: [
-        // Mark6ThemePicker
+        Mark6Messenger
     ],
     providers: []
 })
 
 
-export class Mark6ThemePickerModule {
+export class Mark6MessengerModule {
 }

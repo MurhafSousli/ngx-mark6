@@ -13,13 +13,16 @@ import {MatButtonModule} from '@angular/material';
 import {Mark6AvatarModule} from '../../projects/mark6-lib/src/lib/avatar';
 import {Mark6CoverModule} from '../../projects/mark6-lib/src/lib/cover';
 import {Mark6DropDownModule} from '../../projects/mark6-lib/src/lib/drop-down';
+import {Mark6MessengerModule} from '../../projects/mark6-lib/src/lib/messenger/messenger.module';
+import {SiteMessengerComponent} from './sites/site-messenger/site-messenger.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         // Sites
-        SiteUserProfileComponent
+        SiteUserProfileComponent,
+        SiteMessengerComponent
     ],
     imports: [
         BrowserModule,
@@ -29,7 +32,8 @@ import {Mark6DropDownModule} from '../../projects/mark6-lib/src/lib/drop-down';
         // Mark6
         Mark6AvatarModule,
         Mark6DropDownModule,
-        Mark6CoverModule
+        Mark6CoverModule,
+        Mark6MessengerModule
     ],
     providers: [],
     bootstrap: [AppComponent]
