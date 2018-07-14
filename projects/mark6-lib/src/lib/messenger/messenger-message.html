@@ -1,0 +1,18 @@
+<ng-container *ngFor="let message of messages">
+    <div class="msg" [ngClass]="message.direction">
+        <div class="msg-avatar" *ngIf="(avatarMe && message.direction === 'me') || (avatarOthers && message.direction === 'others')">
+            <img [src]="message.avatar" [alt]="message.user">
+        </div>
+        <div class="msg-content">
+            <div class="msg-message">{{message.message}}</div>
+        </div>
+    </div>
+</ng-container>
+
+<!--
+<div class="msg info">
+    <div class="msg-content">
+        <div class="msg-message">Eine Message an Siglinde Reichholz kostet 90 coins</div>
+    </div>
+</div>
+-->

@@ -1,7 +1,22 @@
 <section class="site-messenger">
     <div class="site-messenger-inner">
 
-        <mark6-messenger></mark6-messenger>
+        <div class="example-messenger">
+            <mark6-messenger>
+                <mark6-messenger-history>
+                    <mark6-messenger-message [messages]="messages" avatarMe="false" avatarOthers="true"></mark6-messenger-message>
+                </mark6-messenger-history>
+
+                <mark6-messenger-footer>
+                    <mark6-messenger-textarea></mark6-messenger-textarea>
+                    <mark6-messenger-actions>
+                        <button mat-icon-button>
+                            <mat-icon svgIcon="send"></mat-icon>
+                        </button>
+                    </mark6-messenger-actions>
+                </mark6-messenger-footer>
+            </mark6-messenger>
+        </div>
 
     </div>
 </section>
