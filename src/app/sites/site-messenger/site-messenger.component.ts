@@ -30,6 +30,18 @@ export class SiteMessengerComponent {
             user: 'Hannes', // Optional
             avatar: 'https://goo.gl/MM4sKH', // Optional
             message: 'Wuaaas?! Ich bin doch kahn babbsack! Du ahler groschepetzer!' // Optional
+        },
+        {
+            direction: 'others', // Required
+            user: 'Otto', // Optional
+            avatar: 'https://www.shareicon.net/download/2015/09/24/106425_man.ico', // Optional
+            message: 'Wuaaas?! Ich bin doch kahn babbsack! Du ahler groschepetzer!' // Optional
+        },
+        {
+            direction: 'others', // Required
+            user: 'Otto', // Optional
+            avatar: 'https://www.shareicon.net/download/2015/09/24/106425_man.ico', // Optional
+            message: 'Wuaaas?! Ich bin doch kahn babbsack! Du ahler groschepetzer!' // Optional
         }
     ];
 
