@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
+import {Component, HostBinding, Input, ViewEncapsulation} from '@angular/core';
 
 
 /**
@@ -12,10 +12,9 @@ import {ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulatio
     exportAs: 'mark6Avatar',
     templateUrl: './avatar.html',
     styleUrls: ['./avatar.scss'],
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    encapsulation: ViewEncapsulation.None
 })
-export class Mark6Avatar {
+export class Mark6AvatarComponent {
 
     @HostBinding('class') classes = 'mark6-avatar';
 
@@ -29,9 +28,6 @@ export class Mark6Avatar {
     @Input() public size = '256x256';
     @Input() public uploadProgress = null;
 
-    constructor() {
-    }
-
 }
 
 
@@ -42,10 +38,9 @@ export class Mark6Avatar {
     selector: 'mark6-avatar-image',
     templateUrl: 'avatar-image.html',
     styleUrls: ['./avatar-image.scss'],
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    encapsulation: ViewEncapsulation.None
 })
-export class Mark6AvatarImage {
+export class Mark6AvatarImageComponent {
 
     @HostBinding('class') public classes = 'mark6-avatar-image';
 
@@ -53,6 +48,7 @@ export class Mark6AvatarImage {
     @Input() public alt;
 
     public defaultImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN0+A8AAYUBQcxKiF0AAAAASUVORK5CYII=';
+
 }
 
 
@@ -63,10 +59,9 @@ export class Mark6AvatarImage {
     selector: 'mark6-avatar-content',
     templateUrl: 'avatar-content.html',
     styleUrls: ['./avatar-content.scss'],
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    encapsulation: ViewEncapsulation.None
 })
-export class Mark6AvatarContent {
+export class Mark6AvatarContentComponent {
 
     @HostBinding('class') public classes = 'mark6-avatar-content';
 
@@ -80,10 +75,9 @@ export class Mark6AvatarContent {
     selector: 'mark6-avatar-upload',
     templateUrl: 'avatar-upload.html',
     styleUrls: ['./avatar-upload.scss'],
-    encapsulation: ViewEncapsulation.None,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    encapsulation: ViewEncapsulation.None
 })
-export class Mark6AvatarUpload {
+export class Mark6AvatarUploadComponent {
 
     @HostBinding('class') public classes = 'mark6-avatar-upload';
 

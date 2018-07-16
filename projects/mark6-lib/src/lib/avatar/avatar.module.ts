@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Mark6Avatar, Mark6AvatarContent, Mark6AvatarImage, Mark6AvatarUpload} from './avatar';
+import {Mark6AvatarComponent, Mark6AvatarContentComponent, Mark6AvatarImageComponent, Mark6AvatarUploadComponent} from './avatar';
 
 
 @NgModule({
@@ -8,16 +8,16 @@ import {Mark6Avatar, Mark6AvatarContent, Mark6AvatarImage, Mark6AvatarUpload} fr
         CommonModule,
     ],
     exports: [
-        Mark6Avatar,
-        Mark6AvatarImage,
-        Mark6AvatarContent,
-        Mark6AvatarUpload
+        Mark6AvatarComponent,
+        Mark6AvatarImageComponent,
+        Mark6AvatarContentComponent,
+        Mark6AvatarUploadComponent
     ],
     declarations: [
-        Mark6Avatar,
-        Mark6AvatarImage,
-        Mark6AvatarContent,
-        Mark6AvatarUpload
+        Mark6AvatarComponent,
+        Mark6AvatarImageComponent,
+        Mark6AvatarContentComponent,
+        Mark6AvatarUploadComponent
     ]
 })
 
