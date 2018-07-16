@@ -15,7 +15,7 @@ import {ChangeDetectionStrategy, Component, HostBinding, Input, ViewEncapsulatio
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Mark6Cover {
+export class Mark6CoverComponent {
     @HostBinding('class') classes = 'mark6-cover';
 
     @HostBinding('class.uploading')
@@ -43,13 +43,13 @@ export class Mark6Cover {
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Mark6CoverImage {
+export class Mark6CoverImageComponent {
     @HostBinding('class') classes = 'mark6-cover-image';
 
     @Input() image;
     @Input() alt;
 
-    public defaultImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN0+A8AAYUBQcxKiF0AAAAASUVORK5CYII=';
+    public defaultImage = 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
 }
 
 
@@ -63,6 +63,6 @@ export class Mark6CoverImage {
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Mark6CoverEditMenu {
+export class Mark6CoverEditMenuComponent {
     @HostBinding('class') classes = 'mark6-cover-edit-menu';
 }

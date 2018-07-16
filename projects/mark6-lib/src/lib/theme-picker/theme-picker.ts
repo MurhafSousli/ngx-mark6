@@ -15,7 +15,7 @@ import {ThemePickerService} from './theme-picker.service';
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Mark6ThemePicker implements OnInit {
+export class Mark6ThemePickerComponent implements OnInit {
 
     @HostBinding('class') classes = 'mark6-theme-picker';
 

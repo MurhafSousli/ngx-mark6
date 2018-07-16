@@ -26,7 +26,7 @@ import {Mark6DropDownService} from './drop-down.service';
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [Mark6DropDownService]
 })
-export class Mark6DropDown implements OnInit, OnDestroy {
+export class Mark6DropDownComponent implements OnInit, OnDestroy {
 
     @HostBinding('class') classes = 'mark6-drop-down';
 
@@ -134,7 +134,7 @@ export class Mark6DropDown implements OnInit, OnDestroy {
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Mark6DropDownTrigger {
+export class Mark6DropDownTriggerComponent {
     @HostBinding('class') classes = 'mark6-drop-down-trigger';
 }
 
@@ -149,7 +149,7 @@ export class Mark6DropDownTrigger {
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Mark6DropDownOrigin {
+export class Mark6DropDownOriginComponent {
     @HostBinding('class') classes = 'mark6-drop-down-origin';
 }
 
@@ -164,6 +164,6 @@ export class Mark6DropDownOrigin {
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Mark6DropDownContent {
+export class Mark6DropDownContentComponent {
     @HostBinding('class') classes = 'mark6-drop-down-content';
 }

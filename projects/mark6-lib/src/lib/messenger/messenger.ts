@@ -8,7 +8,7 @@ import {Component, ElementRef, HostBinding, HostListener, Input, ViewChild, View
     styleUrls: ['./messenger.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class Mark6Messenger {
+export class Mark6MessengerComponent {
 
     // @Input() @HostBinding('style.width.px') public width = window.innerWidth;
     // @Input() @HostBinding('style.height.px') public height = window.innerHeight;
@@ -30,7 +30,7 @@ export class Mark6Messenger {
     styleUrls: ['./messenger-history.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class Mark6MessengerHistory {
+export class Mark6MessengerHistoryComponent {
 
     @HostBinding('class') classes = 'mark6-messenger-history';
 
@@ -44,7 +44,7 @@ export class Mark6MessengerHistory {
     styleUrls: ['./messenger-message.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class Mark6MessengerMessage {
+export class Mark6MessengerMessageComponent {
 
     @Input() public messages = null;
     @Input() public avatarMe = false;
@@ -62,7 +62,7 @@ export class Mark6MessengerMessage {
     styleUrls: ['./messenger-footer.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class Mark6MessengerFooter {
+export class Mark6MessengerFooterComponent {
 
     @HostBinding('class') classes = 'mark6-messenger-footer';
 
@@ -76,18 +76,20 @@ export class Mark6MessengerFooter {
     styleUrls: ['./messenger-textarea.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class Mark6MessengerTextarea {
+export class Mark6MessengerTextAreaComponent {
 
     @Input() public placeholder = 'Enter Message ...';
 
     @HostBinding('class') classes = 'mark6-messenger-textarea';
 
-    @HostListener('click') onClick() {this.focusTextArea()}
+    @HostListener('click') onClick() {
+        this.focusTextArea();
+    }
 
     @ViewChild('someInput') someInput: ElementRef;
 
     focusTextArea() {
-        this.someInput.nativeElement.focus()
+        this.someInput.nativeElement.focus();
     }
 
 }
@@ -100,7 +102,7 @@ export class Mark6MessengerTextarea {
     styleUrls: ['./messenger-actions.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class Mark6MessengerActions {
+export class Mark6MessengerActionsComponent {
 
     @HostBinding('class') classes = 'mark6-messenger-actions';
 

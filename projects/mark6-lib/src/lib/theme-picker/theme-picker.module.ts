@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 // import {FormsModule} from '@angular/forms';
 
-// import {Mark6ThemePicker} from './theme-picker';
+// import {Mark6ThemePickerComponent} from './theme-picker';
 import {ThemePickerService} from './theme-picker.service';
 
 
@@ -12,10 +12,10 @@ import {ThemePickerService} from './theme-picker.service';
         // FormsModule
     ],
     exports: [
-        // Mark6ThemePicker
+        // Mark6ThemePickerComponent
     ],
     declarations: [
-        // Mark6ThemePicker
+        // Mark6ThemePickerComponent
     ],
     providers: [
         ThemePickerService

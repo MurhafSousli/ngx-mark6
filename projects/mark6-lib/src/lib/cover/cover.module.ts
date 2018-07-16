@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Mark6Cover, Mark6CoverEditMenu, Mark6CoverImage} from './cover';
+import {Mark6CoverComponent, Mark6CoverEditMenuComponent, Mark6CoverImageComponent} from './cover';
 import {MatCardModule, MatIconModule, MatListModule, MatProgressBarModule} from '@angular/material';
 
 
@@ -13,14 +13,14 @@ import {MatCardModule, MatIconModule, MatListModule, MatProgressBarModule} from 
         MatProgressBarModule
     ],
     exports: [
-        Mark6Cover,
-        Mark6CoverImage,
-        Mark6CoverEditMenu
+        Mark6CoverComponent,
+        Mark6CoverImageComponent,
+        Mark6CoverEditMenuComponent
     ],
     declarations: [
-        Mark6Cover,
-        Mark6CoverImage,
-        Mark6CoverEditMenu
+        Mark6CoverComponent,
+        Mark6CoverImageComponent,
+        Mark6CoverEditMenuComponent
     ]
 })
 

@@ -1,5 +1,10 @@
-<ng-container *ngFor="let message of messages">
-    <div class="msg" [ngClass]="message.direction">
+<ng-container *ngFor="let message of messages; let isLast = last; let isFirst = first; let i = index;">
+    <div class="msg" [class]="message.direction" [ngClass]="{
+    'message': true,
+    'first-from-direction': messages[i-1] && messages[i-1].direction !== message.direction || isFirst,
+    'first-from-user': messages[i-1] && messages[i-1].user_id !== message.user_id || isFirst,
+    'last-from-direction': messages[i+1] && messages[i+1].direction !== message.direction || isLast,
+    'last-from-user': messages[i+1] && messages[i+1].user_id !== message.user_id || isLast}">
         <div class="msg-avatar" *ngIf="(avatarMe && message.direction === 'me') || (avatarOthers && message.direction === 'others')">
             <img [src]="message.avatar" [alt]="message.user">
         </div>

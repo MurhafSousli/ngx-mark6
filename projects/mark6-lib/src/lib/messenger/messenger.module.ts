@@ -1,8 +1,12 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {
-    Mark6Messenger, Mark6MessengerActions, Mark6MessengerFooter, Mark6MessengerHistory, Mark6MessengerMessage,
-    Mark6MessengerTextarea
+    Mark6MessengerComponent,
+    Mark6MessengerHistoryComponent,
+    Mark6MessengerMessageComponent,
+    Mark6MessengerFooterComponent,
+    Mark6MessengerActionsComponent,
+    Mark6MessengerTextAreaComponent
 } from './messenger';
 import {Mark6TextAreaAutoSizeDirective} from '../directives/text-area-auto-size';
 
@@ -12,21 +16,21 @@ import {Mark6TextAreaAutoSizeDirective} from '../directives/text-area-auto-size'
         CommonModule,
     ],
     exports: [
-        Mark6Messenger,
-        Mark6MessengerHistory,
-        Mark6MessengerMessage,
-        Mark6MessengerFooter,
-        Mark6MessengerActions,
-        Mark6MessengerTextarea
+        Mark6MessengerComponent,
+        Mark6MessengerHistoryComponent,
+        Mark6MessengerMessageComponent,
+        Mark6MessengerFooterComponent,
+        Mark6MessengerActionsComponent,
+        Mark6MessengerTextAreaComponent
     ],
     declarations: [
         Mark6TextAreaAutoSizeDirective,
-        Mark6Messenger,
-        Mark6MessengerHistory,
-        Mark6MessengerMessage,
-        Mark6MessengerFooter,
-        Mark6MessengerActions,
-        Mark6MessengerTextarea
+        Mark6MessengerComponent,
+        Mark6MessengerHistoryComponent,
+        Mark6MessengerMessageComponent,
+        Mark6MessengerFooterComponent,
+        Mark6MessengerActionsComponent,
+        Mark6MessengerTextAreaComponent
     ],
     providers: []
 })
