@@ -86,7 +86,7 @@ export class Mark6MessengerTextAreaComponent {
         this.focusTextArea();
     }
 
-    @ViewChild('someInput') someInput: ElementRef;
+    @ViewChild('textInput') someInput: ElementRef;
 
     focusTextArea() {
         this.someInput.nativeElement.focus();
