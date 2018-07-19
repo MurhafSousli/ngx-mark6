@@ -1,12 +1,14 @@
 @import "~@devmonkeys/scss-elements/style";
 
+
+
 section.site-messenger {
     .site-messenger-inner {
         height: 100vh;
 
         .example-messenger {
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             .mark6-messenger {
                 background-color: #fff;
             }

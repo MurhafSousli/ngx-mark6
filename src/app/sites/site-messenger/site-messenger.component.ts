@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener} from '@angular/core';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
 
@@ -10,7 +10,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 
 
-export class SiteMessengerComponent {
+export class SiteMessengerComponent implements AfterViewInit {
 
     public messages = [
         {
@@ -85,10 +85,32 @@ export class SiteMessengerComponent {
         }
     ];
 
+    // availHeight: number;
+    // innerHeight: number;
+    // chromeH: number;
+    // myInnerHeight = window.innerHeight - this.chromeH;
+
+
+    // @HostListener('window:resize', ['$event'])
+    // onResize(event) {
+        // this.myInnerHeight = window.innerHeight - this.chromeH;
+    // }
+
     constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
         iconRegistry.addSvgIcon(
             'send',
             sanitizer.bypassSecurityTrustResourceUrl('assets/icons/material/baseline-send-24px.svg'));
+
+        // this.availHeight = screen.availHeight;
+        // this.innerHeight = window.innerHeight;
+
+        // setTimeout(function () {
+            // this.chromeH = window.innerHeight - window.outerHeight;
+        // }, 300);
+    }
+
+    ngAfterViewInit() {
+
     }
 
 }
