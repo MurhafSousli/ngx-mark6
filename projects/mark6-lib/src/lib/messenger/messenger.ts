@@ -38,43 +38,6 @@ export class Mark6MessengerHistoryComponent {
 
     @HostBinding('class') classes = 'mark6-messenger-history';
 
-    @HostListener('scroll', ['$event'])
-    private onScroll($event: Event) {
-
-    };
-
-    @ViewChild('scrollMe') private myScrollContainer: ElementRef;
-
-    scrollToBottom() {
-        try {
-            this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
-        } catch(err) { }
-    }
-
-    /*
-    disableScrollDown = false;
-
-    private checkScroll() {
-        let element = this.myScrollContainer.nativeElement;
-        let atBottom = element.scrollHeight - element.scrollTop === element.clientHeight;
-        if (this.disableScrollDown && atBottom) {
-            this.disableScrollDown = false;
-        } else {
-            this.disableScrollDown = true;
-        }
-    }
-
-    private scrollToBottom(): void {
-        if (this.disableScrollDown) {
-            return;
-        }
-        try {
-            this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
-        } catch (err) {
-        }
-    }
-    */
-
 }
 
 
