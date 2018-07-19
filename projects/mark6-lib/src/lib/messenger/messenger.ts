@@ -36,7 +36,18 @@ export class Mark6MessengerComponent {
 })
 export class Mark6MessengerHistoryComponent {
 
+    test = false;
+
     @HostBinding('class') classes = 'mark6-messenger-history';
+
+    @HostListener('window:scroll', [])
+    onScroll(): void {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            this.test = true;
+        } else {
+            this.test = false;
+        }
+    }
 
 }
 
