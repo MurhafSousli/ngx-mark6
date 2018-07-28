@@ -3,7 +3,9 @@
 -->
 <div class="cover-item">
 
-    <ng-content select="mark6-cover-edit-menu" *ngIf="editMode"></ng-content>
+    <ng-content select="mark6-cover-content"></ng-content>
+
+    <ng-content select="mark6-cover-content-edit" *ngIf="editMode"></ng-content>
 
     <div class="mark6-upload-overlay" *ngIf="editMode"></div>
 

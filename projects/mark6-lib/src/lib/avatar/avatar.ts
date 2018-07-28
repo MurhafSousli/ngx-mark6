@@ -72,6 +72,22 @@ export class Mark6AvatarContentComponent {
  * CoverImage - Component intended to be used within the `<mark6-cover>`.
  */
 @Component({
+    selector: 'mark6-avatar-content-edit',
+    templateUrl: 'avatar-content-edit.html',
+    styleUrls: ['./avatar-content-edit.scss'],
+    encapsulation: ViewEncapsulation.None
+})
+export class Mark6AvatarContentEditComponent {
+
+    @HostBinding('class') public classes = 'mark6-avatar-content-edit';
+
+}
+
+
+/**
+ * CoverImage - Component intended to be used within the `<mark6-cover>`.
+ */
+@Component({
     selector: 'mark6-avatar-upload',
     templateUrl: 'avatar-upload.html',
     styleUrls: ['./avatar-upload.scss'],

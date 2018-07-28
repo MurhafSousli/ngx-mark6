@@ -1,8 +1,4 @@
-import {
-    AfterViewChecked, Component, ElementRef, HostBinding, HostListener, Inject, Input, ViewChild,
-    ViewEncapsulation
-} from '@angular/core';
-import {DOCUMENT} from '@angular/common';
+import {Component, ElementRef, HostBinding, HostListener, Input, ViewChild, ViewEncapsulation} from '@angular/core';
 
 
 @Component({
@@ -40,6 +36,16 @@ export class Mark6MessengerHistoryComponent {
 
     @HostBinding('class') classes = 'mark6-messenger-history';
 
+    @HostListener('scroll', ['$event'])
+    public scrollHandler(event) {
+        let obj = document.getElementById('markMessageHistory');
+        let objScrollHeight = Math.round((obj.scrollTop) * 100) / 100;
+        if ( (objScrollHeight) === (obj.scrollHeight - obj.offsetHeight - 0.55)) {
+            console.log('object to bottom');
+        }
+    }
+
+    /*
     @HostListener('window:scroll', [])
     onScroll(): void {
         if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
@@ -48,6 +54,7 @@ export class Mark6MessengerHistoryComponent {
             this.test = false;
         }
     }
+    */
 
 }
 

@@ -57,12 +57,27 @@ export class Mark6CoverImageComponent {
  * CoverImage - Component intended to be used within the `<mark6-cover>`.
  */
 @Component({
-    selector: 'mark6-cover-edit-menu',
-    templateUrl: 'cover-edit-menu.html',
-    styleUrls: ['./cover-edit-menu.scss'],
+    selector: 'mark6-cover-content',
+    templateUrl: 'cover-content.html',
+    styleUrls: ['./cover-content.scss'],
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Mark6CoverEditMenuComponent {
-    @HostBinding('class') classes = 'mark6-cover-edit-menu';
+export class Mark6CoverContentComponent {
+    @HostBinding('class') classes = 'mark6-cover-content';
+}
+
+
+/**
+ * CoverImage - Component intended to be used within the `<mark6-cover>`.
+ */
+@Component({
+    selector: 'mark6-cover-content-edit',
+    templateUrl: 'cover-content-edit.html',
+    styleUrls: ['./cover-content-edit.scss'],
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class Mark6CoverContentEditComponent {
+    @HostBinding('class') classes = 'mark6-cover-content-edit';
 }
