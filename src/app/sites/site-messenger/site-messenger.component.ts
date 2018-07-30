@@ -82,6 +82,18 @@ export class SiteMessengerComponent implements AfterViewInit {
             user: 'Otto', // Optional
             avatar: 'https://www.shareicon.net/download/2015/09/24/106425_man.ico', // Optional
             message: 'Wuaaas?! Ich bin doch kahn babbsack! Du ahler groschepetzer!' // Optional
+        },
+        {
+            direction: 'others', // Required
+            user_id: 2323, // Required
+            user: 'Otto', // Optional
+            avatar: 'https://www.shareicon.net/download/2015/09/24/106425_man.ico', // Optional
+            message: 'Wuaaas?! Ich bin doch kahn babbsack! Du ahler groschepetzer!', // Optional
+            attachment: {
+                type: 'image',
+                thumb: 'http://nichegamer.s3-us-west-2.amazonaws.com/wp-content/uploads/2017/12/08112436/berserk-12-08-17-1.jpg',
+                id: 'j2ikd94fsd923325sdf'
+            }
         }
     ];
 

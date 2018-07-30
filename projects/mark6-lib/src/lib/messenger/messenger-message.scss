@@ -41,8 +41,8 @@ $spaceBetweenMessageGroups: 24px;
         flex-direction: column;
         .msg-message {
             margin-top: 2px;
-            padding: 8px 12px;
-            display: inline-flex;
+            padding: 8px;
+            // display: inline-flex;
             font-size: 16px;
             border-radius: 4px;
             @include mediaMin(1100px) {

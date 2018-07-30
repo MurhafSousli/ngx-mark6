@@ -32,29 +32,30 @@ export class Mark6MessengerComponent {
 })
 export class Mark6MessengerHistoryComponent {
 
-    test = false;
+    // public test = false;
 
     @HostBinding('class') classes = 'mark6-messenger-history';
 
-    @HostListener('scroll', ['$event'])
-    public scrollHandler(event) {
-        let obj = document.getElementById('markMessageHistory');
-        let objScrollHeight = Math.round((obj.scrollTop) * 100) / 100;
-        if ( (objScrollHeight) === (obj.scrollHeight - obj.offsetHeight - 0.55)) {
-            console.log('object to bottom');
-        }
-    }
-
     /*
-    @HostListener('window:scroll', [])
-    onScroll(): void {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            this.test = true;
-        } else {
-            this.test = false;
+        @HostListener('scroll', ['$event'])
+        public scrollHandler(event) {
+            let obj = document.getElementById('markMessageHistory');
+            let objScrollHeight = Math.round((obj.scrollTop) * 100) / 100;
+            if ( (objScrollHeight) === (obj.scrollHeight - obj.offsetHeight - 0.55)) {
+                console.log('object to bottom');
+            }
         }
-    }
-    */
+
+
+        @HostListener('window:scroll', [])
+        onScroll(): void {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                this.test = true;
+            } else {
+                this.test = false;
+            }
+        }
+        */
 
 }
 
@@ -73,6 +74,22 @@ export class Mark6MessengerMessageComponent {
     @Input() public avatarOthers = false;
 
     @HostBinding('class') classes = 'mark6-messenger-message';
+
+}
+
+
+@Component({
+    selector: 'mark6-messenger-attachments',
+    exportAs: 'Mark6MessengerAttachments',
+    templateUrl: './messenger-attachments.html',
+    styleUrls: ['./messenger-attachments.scss'],
+    encapsulation: ViewEncapsulation.None
+})
+export class Mark6MessengerAttachmentsComponent {
+
+    @Input() public attachments = [];
+
+    @HostBinding('class') classes = 'mark6-messenger-attachments';
 
 }
 

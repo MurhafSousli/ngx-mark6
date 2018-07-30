@@ -6,7 +6,8 @@ import {
     Mark6MessengerMessageComponent,
     Mark6MessengerFooterComponent,
     Mark6MessengerActionsComponent,
-    Mark6MessengerTextAreaComponent
+    Mark6MessengerTextAreaComponent,
+    Mark6MessengerAttachmentsComponent
 } from './messenger';
 import {Mark6TextAreaAutoSizeDirective} from '../directives/text-area-auto-size';
 
@@ -19,6 +20,7 @@ import {Mark6TextAreaAutoSizeDirective} from '../directives/text-area-auto-size'
         Mark6MessengerComponent,
         Mark6MessengerHistoryComponent,
         Mark6MessengerMessageComponent,
+        Mark6MessengerAttachmentsComponent,
         Mark6MessengerFooterComponent,
         Mark6MessengerActionsComponent,
         Mark6MessengerTextAreaComponent
@@ -28,6 +30,7 @@ import {Mark6TextAreaAutoSizeDirective} from '../directives/text-area-auto-size'
         Mark6MessengerComponent,
         Mark6MessengerHistoryComponent,
         Mark6MessengerMessageComponent,
+        Mark6MessengerAttachmentsComponent,
         Mark6MessengerFooterComponent,
         Mark6MessengerActionsComponent,
         Mark6MessengerTextAreaComponent

@@ -9,7 +9,10 @@
             <img [src]="message.avatar" [alt]="message.user">
         </div>
         <div class="msg-content">
-            <div class="msg-message">{{message.message}}</div>
+            <div class="msg-message">
+                <mark6-messenger-attachments [attachments]="message.attachment" *ngIf="message.attachment"></mark6-messenger-attachments>
+                {{message.message}}
+            </div>
         </div>
     </div>
 </ng-container>

@@ -49,7 +49,7 @@ export class Mark6CoverImageComponent {
     @Input() image;
     @Input() alt;
 
-    public defaultImage = 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
+    public defaultImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN0+A8AAYUBQcxKiF0AAAAASUVORK5CYII=';
 }
 
 
