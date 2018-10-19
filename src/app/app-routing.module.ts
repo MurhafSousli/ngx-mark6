@@ -5,7 +5,7 @@ import {SiteMessengerComponent} from './sites/site-messenger/site-messenger.comp
 
 const routes: Routes = [
     {path: '', pathMatch: 'full', redirectTo: 'user'},
-    {path: 'user', component: SiteUserProfileComponent},
+    {path: 'profile', component: SiteUserProfileComponent},
     {path: 'messenger', component: SiteMessengerComponent},
 ];
 

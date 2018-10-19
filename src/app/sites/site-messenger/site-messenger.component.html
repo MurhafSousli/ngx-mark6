@@ -1,31 +1,26 @@
-<section class="site-messenger">
-    <div class="site-messenger-inner">
+<div class="example-messenger">
+    <mark6-messenger>
 
-        <div class="example-messenger">
-            <mark6-messenger>
+        <mark6-messenger-history>
+            <mark6-messenger-message [messages]="messages" [avatarMe]="false"
+                                     [avatarOthers]="true"></mark6-messenger-message>
+        </mark6-messenger-history>
 
-                <mark6-messenger-history>
-                    <mark6-messenger-message [messages]="messages" [avatarMe]="false" [avatarOthers]="true"></mark6-messenger-message>
-                </mark6-messenger-history>
+        <mark6-messenger-footer>
+            <mark6-messenger-textarea></mark6-messenger-textarea>
+            <mark6-messenger-actions>
+                <button mat-icon-button>
+                    <mat-icon svgIcon="send"></mat-icon>
+                </button>
+            </mark6-messenger-actions>
+        </mark6-messenger-footer>
 
-                <mark6-messenger-footer>
-                    <mark6-messenger-textarea></mark6-messenger-textarea>
-                    <mark6-messenger-actions>
-                        <button mat-icon-button>
-                            <mat-icon svgIcon="send"></mat-icon>
-                        </button>
-                    </mark6-messenger-actions>
-                </mark6-messenger-footer>
+    </mark6-messenger>
+</div>
 
-            </mark6-messenger>
-        </div>
-
-        <!--
-        <div style="position: fixed; top: 24px; left: 0;">
-            <div>availHeight: {{availHeight}}</div>
-            <div>innerHeight: {{innerHeight}}</div>
-        </div>
-        -->
-
-    </div>
-</section>
+<!--
+<div style="position: fixed; top: 24px; left: 0;">
+    <div>availHeight: {{availHeight}}</div>
+    <div>innerHeight: {{innerHeight}}</div>
+</div>
+-->

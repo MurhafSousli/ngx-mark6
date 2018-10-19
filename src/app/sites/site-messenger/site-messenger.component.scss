@@ -1,28 +1,21 @@
-section.site-messenger {
-    .site-messenger-inner {
-        height: 100vh;
+.example-messenger {
+    width: 100%;
+    height: calc(100vh - 64px);
+    .mark6-messenger {
+        background-color: #fff;
+    }
+}
 
-        .example-messenger {
-            width: 100vw;
-            height: 100vh;
-            .mark6-messenger {
-                background-color: #fff;
-            }
+.mark6-messenger-history {
+
+}
+
+.mark6-messenger-footer {
+    background-color: #e5e5e5;
+    .mark6-messenger-actions {
+        button {
+            width: 48px;
+            height: 48px;
         }
-
-        .mark6-messenger-history {
-
-        }
-
-        .mark6-messenger-footer {
-            background-color: #e5e5e5;
-            .mark6-messenger-actions {
-                button {
-                    width: 48px;
-                    height: 48px;
-                }
-            }
-        }
-
     }
 }

@@ -7,7 +7,7 @@ import {AppComponent} from './app.component';
 import {SiteUserProfileComponent} from './sites/site-user-profile/site-user-profile.component';
 
 // Material 2
-import {MatButtonModule, MatIconModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatInputModule, MatToolbarModule} from '@angular/material';
 
 // Mark6
 import {Mark6AvatarModule} from '../../projects/mark6-lib/src/lib/avatar';
@@ -35,6 +35,7 @@ import {HttpClientModule} from '@angular/common/http';
         MatIconModule,
         MatInputModule,
         MatButtonModule,
+        MatToolbarModule,
         // Mark6
         Mark6AvatarModule,
         Mark6DropDownModule,
