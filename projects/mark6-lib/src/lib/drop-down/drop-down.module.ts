@@ -1,12 +1,13 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {
     Mark6DropDownComponent,
     Mark6DropDownContentComponent,
     Mark6DropDownOriginComponent,
-    Mark6DropDownTriggerComponent
+    Mark6DropDownTriggerComponent,
+    Mark6DropDownCloseTriggerDirective
 } from './drop-down';
-import {Mark6DropDownService} from './drop-down.service';
+import { Mark6DropDownService } from './drop-down.service';
 
 
 @NgModule({
@@ -17,13 +18,15 @@ import {Mark6DropDownService} from './drop-down.service';
         Mark6DropDownComponent,
         Mark6DropDownTriggerComponent,
         Mark6DropDownOriginComponent,
-        Mark6DropDownContentComponent
+        Mark6DropDownContentComponent,
+        Mark6DropDownCloseTriggerDirective
     ],
     declarations: [
         Mark6DropDownComponent,
         Mark6DropDownTriggerComponent,
         Mark6DropDownOriginComponent,
-        Mark6DropDownContentComponent
+        Mark6DropDownContentComponent,
+        Mark6DropDownCloseTriggerDirective
     ],
     providers: [
         Mark6DropDownService

@@ -7,9 +7,11 @@ import {
     Input,
     OnDestroy,
     OnInit,
-    ViewEncapsulation
+    ViewEncapsulation,
+    Directive,
+    Host
 } from '@angular/core';
-import {Mark6DropDownService} from './drop-down.service';
+import { Mark6DropDownService } from './drop-down.service';
 
 /**
  * DropDown
@@ -24,7 +26,6 @@ import {Mark6DropDownService} from './drop-down.service';
     styleUrls: ['./drop-down.scss'],
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    providers: [Mark6DropDownService]
 })
 export class Mark6DropDownComponent implements OnInit, OnDestroy {
 
@@ -138,6 +139,13 @@ export class Mark6DropDownTriggerComponent {
     @HostBinding('class') classes = 'mark6-drop-down-trigger';
 }
 
+@Directive({ selector: '[mark6DropDownCloseTrigger]' })
+export class Mark6DropDownCloseTriggerDirective {
+    constructor(private _dropDownService: Mark6DropDownService) { }
+    @HostListener('click') onClick() {
+        this._dropDownService.close(null);
+    }
+}
 
 /**
  * DropDownOrigin - Component intended to be used within the `<mark6-drop-down>`.
