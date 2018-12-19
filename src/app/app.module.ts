@@ -20,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {SiteDropDownComponent} from './sites/site-drop-down/site-drop-down.component';
 import {Mark6ImageModule} from '../../projects/mark6-lib/src/lib/image';
 import {Mark6EditableImageModule} from '../../projects/mark6-lib/src/lib/editable-image';
+import { SiteImageComponent } from './sites/site-image/site-image.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {Mark6EditableImageModule} from '../../projects/mark6-lib/src/lib/editabl
         // Sites
         SiteUserProfileComponent,
         SiteMessengerComponent,
-        SiteDropDownComponent
+        SiteDropDownComponent,
+        SiteImageComponent
     ],
     imports: [
         BrowserModule,
