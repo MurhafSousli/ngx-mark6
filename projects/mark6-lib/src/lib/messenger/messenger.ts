@@ -1,4 +1,7 @@
-import {Component, ElementRef, HostBinding, HostListener, Input, ViewChild, ViewEncapsulation} from '@angular/core';
+import {
+    AfterViewInit, Component, Directive, ElementRef, HostBinding, HostListener, Input, ViewChild,
+    ViewEncapsulation
+} from '@angular/core';
 
 
 @Component({
@@ -131,6 +134,33 @@ export class Mark6MessengerTextAreaComponent {
         this.someInput.nativeElement.focus();
     }
 
+}
+
+
+@Directive({
+    selector: 'textarea[Mark6TextAreaAutoSize]',
+    host: {
+        'rows': '1',
+        'style': 'overflow: hidden'
+    }
+})
+export class Mark6TextAreaAutoSizeDirective implements AfterViewInit {
+
+    constructor(private elem: ElementRef) {
+    }
+
+    public ngAfterViewInit() {
+        this.resize();
+    }
+
+    @HostListener('input')
+    private resize() {
+        const textArea = this.elem.nativeElement as HTMLTextAreaElement;
+        // Reset textArea height to auto that correctly calculate the new height
+        textArea.style.height = 'auto';
+        // Set new height
+        textArea.style.height = `${textArea.scrollHeight}px`;
+    }
 }
 
 

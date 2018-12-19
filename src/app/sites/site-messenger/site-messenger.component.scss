@@ -1,6 +1,9 @@
 .example-messenger {
     width: 100%;
-    height: calc(100vh - 64px);
+    height: calc(100vh - 56px);
+    @media (min-width: 600px) {
+        height: calc(100vh - 64px);
+    }
     .mark6-messenger {
         background-color: #fff;
     }

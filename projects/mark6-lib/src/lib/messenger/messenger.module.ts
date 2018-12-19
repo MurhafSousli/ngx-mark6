@@ -7,9 +7,9 @@ import {
     Mark6MessengerFooterComponent,
     Mark6MessengerActionsComponent,
     Mark6MessengerTextAreaComponent,
-    Mark6MessengerAttachmentsComponent
+    Mark6MessengerAttachmentsComponent,
+    Mark6TextAreaAutoSizeDirective
 } from './messenger';
-import {Mark6TextAreaAutoSizeDirective} from '../directives/text-area-auto-size';
 
 
 @NgModule({
