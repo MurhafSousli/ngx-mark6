@@ -43,19 +43,19 @@ export class Mark6ImageDirective implements OnInit {
 
     }
 }
-    /* TODO ALEX HERE
-    constructor(private renderer: Renderer2, private el: ElementRef) {}
+/* TODO ALEX HERE
+constructor(private renderer: Renderer2, private el: ElementRef) {}
 
-    ngOnInit() {
-        const div = this.renderer.createElement('div');
-        const text = this.renderer.createText('Hello world!');
+ngOnInit() {
+    const div = this.renderer.createElement('div');
+    const text = this.renderer.createText('Hello world!');
 
-        this.renderer.appendChild(div, text);
-        this.renderer.appendChild(this.el.nativeElement, div);
-    }
-    */
-
+    this.renderer.appendChild(div, text);
+    this.renderer.appendChild(this.el.nativeElement, div);
 }
+*/
+
+
 
 @Component({
     template: '<img [src]="src" />'
