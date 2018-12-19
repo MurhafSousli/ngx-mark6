@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Mark6EditableImageComponent} from './editable-image';
+import {Mark6EditableImageComponent, Mark6EditableImageContentComponent, Mark6EditableImageContentEditComponent} from './editable-image';
 
 
 @NgModule({
@@ -8,10 +8,14 @@ import {Mark6EditableImageComponent} from './editable-image';
         CommonModule,
     ],
     exports: [
-        Mark6EditableImageComponent
+        Mark6EditableImageComponent,
+        Mark6EditableImageContentComponent,
+        Mark6EditableImageContentEditComponent
     ],
     declarations: [
-        Mark6EditableImageComponent
+        Mark6EditableImageComponent,
+        Mark6EditableImageContentComponent,
+        Mark6EditableImageContentEditComponent
     ]
 })
 
