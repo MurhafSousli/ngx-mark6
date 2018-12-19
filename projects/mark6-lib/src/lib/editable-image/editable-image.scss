@@ -1,13 +1,13 @@
 @import "~@devmonkeys/scss-elements/style";
 
-.mark6-cover {
+.mark6-editable-image {
     display: block;
     user-select: none;
     position: relative;
     @include mediaMin($resDesktop) {
         // For <mark6-avatar-upload> Child Component
         &:hover:not(.uploading) {
-            .mark6-cover-upload {
+            .mark6-upload {
                 opacity: 1;
                 cursor: pointer;
                 background-color: rgba(0, 0, 0, 0.64);
@@ -15,13 +15,13 @@
         }
         // Overlay
         &:hover, &.uploading {
-            .mark6-upload-overlay {
+            .mark6-overlay {
                 background-color: rgba(255, 255, 255, 0.48);
             }
         }
     }
 
-    .mark6-upload-overlay {
+    .mark6-overlay {
         width: 100%;
         height: 100%;
 
@@ -37,19 +37,21 @@
     }
 
     img {
+        width: 100%;
+
         z-index: 100;
         position: relative;
+
+        display: block;
     }
 
-    .mark6-cover-progress {
+    .mark6-progress {
         width: 100%;
 
         bottom: 0;
         left: 0;
         z-index: 250;
         position: absolute;
-
-        opacity: 0.64;
     }
 
 }

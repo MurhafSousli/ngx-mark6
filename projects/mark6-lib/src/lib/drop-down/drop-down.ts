@@ -51,9 +51,9 @@ export class Mark6DropDownComponent implements OnInit, OnDestroy {
         return this.positionY === 'bottom';
     }
 
-    @Input() addClass: string;
-    @Input() positionY = 'bottom';
-    @Input() positionX = 'right';
+    @Input() public addClass: string;
+    @Input() public positionY = 'bottom';
+    @Input() public positionX = 'right';
 
     private open = false;
     private dropDown;

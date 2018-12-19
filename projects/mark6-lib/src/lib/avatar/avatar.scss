@@ -1,16 +1,5 @@
 @import "~@devmonkeys/scss-elements/style";
 
-$progressValueColour: #e53935;
-$progressBarBgColour: lighten($progressValueColour, 32%);
-
-@mixin fullOverlay() {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-}
-
 .mark6-avatar {
     display: block;
     user-select: none;
@@ -33,8 +22,14 @@ $progressBarBgColour: lighten($progressValueColour, 32%);
     }
 
     .mark6-upload-overlay {
-        @include fullOverlay();
+        width: 100%;
+        height: 100%;
+
+        top: 0;
+        left: 0;
         z-index: 200;
+        position: absolute;
+
         transition-duration: 0.4s;
         background-color: rgba(255, 255, 255, 0);
         transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -46,24 +41,15 @@ $progressBarBgColour: lighten($progressValueColour, 32%);
         position: relative;
     }
 
-    progress {
-        @include fullOverlay();
+    .mark6-avatar-progress {
+        width: 100%;
+
+        bottom: 0;
+        left: 0;
         z-index: 250;
+        position: absolute;
+
         opacity: 0.64;
-        transform: rotate(-90deg);
-        border: none;
-        -webkit-appearance: none;
-        // Value Bar
-        &[value]::-webkit-progress-value {
-            background: $progressValueColour;
-        }
-        // Bar Background
-        &[value]::-moz-progress-bar {
-            background: $progressBarBgColour;
-        }
-        &[value]::-webkit-progress-bar {
-            background: $progressBarBgColour;
-        }
     }
 
 }

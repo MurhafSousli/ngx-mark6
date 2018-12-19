@@ -1,29 +1,10 @@
-<!-- TODO @Murhaf - Use this if you need this for Cover Upload. if not Delete this.
-<input hidden (change)="uploadCover()" #fileInput accept="image/*" type="file" *ngIf="editMode"/>
--->
-<div class="cover-item">
+<ng-content select="mark6-cover-content" *ngIf="!editMode"></ng-content>
 
-    <ng-content select="mark6-cover-content"></ng-content>
+<ng-container *ngIf="editMode">
+    <ng-content select="mark6-cover-content-edit"></ng-content>
+    <div class="mark6-upload-overlay"></div>
+</ng-container>
 
-    <ng-content select="mark6-cover-content-edit" *ngIf="editMode"></ng-content>
+<ng-content select="mark6-image"></ng-content>
 
-    <div class="mark6-upload-overlay" *ngIf="editMode"></div>
-
-    <ng-content select="mark6-cover-image"></ng-content>
-
-    <!-- TODO @Murhaf - Just a way to solve this, This is how a friend did it in his Project. If you dont need this line, just delete it.
-    <img [src]="cover | storageUrl : size : defaultAvatar"/>
-    -->
-
-    <!-- TODO @Murhaf - Set uploadProgress to make this progressbar work. -->
-    <progress [value]="uploadProgress" max="100" *ngIf="uploadProgress && editMode"></progress>
-
-</div>
-
-<ng-content select="mark6-avatar"></ng-content>
-<ng-content select="h1"></ng-content>
-<ng-content select="h2"></ng-content>
-<ng-content select="h3"></ng-content>
-<ng-content select="app-profile-main-menu"></ng-content>
-<ng-content select="app-user-settings-main-menu"></ng-content>
-<ng-content select="app-profile-interact-menu"></ng-content>
+<div class="mark6-avatar-progress" [style.height.%]="uploadProgress" [style.backgroundColor]="uploadProgressColor" *ngIf="uploadProgress && editMode"></div>

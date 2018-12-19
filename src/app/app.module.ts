@@ -18,6 +18,8 @@ import {SiteMessengerComponent} from './sites/site-messenger/site-messenger.comp
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import {SiteDropDownComponent} from './sites/site-drop-down/site-drop-down.component';
+import {Mark6ImageModule} from '../../projects/mark6-lib/src/lib/image';
+import {Mark6EditableImageModule} from '../../projects/mark6-lib/src/lib/editable-image';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import {SiteDropDownComponent} from './sites/site-drop-down/site-drop-down.compo
         MatButtonModule,
         MatToolbarModule,
         // Mark6
+        Mark6ImageModule,
+        Mark6EditableImageModule,
         Mark6AvatarModule,
         Mark6DropDownModule,
         Mark6CoverModule,

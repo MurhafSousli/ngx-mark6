@@ -2,18 +2,9 @@
     <div class="site-user-profile-inner">
 
         <div class="mark6-profile-element-sidebar" *ngIf="resMinDesktop.matches">
-            <mark6-avatar [editMode]="true">
-                <!-- Inside <mark6-avatar-content> people can place what ever they want.
-                <mark6-avatar-content>
-                    <button mat-icon-button>
-                        <i class="material-icons">cloud_upload</i>
-                        <span class="cover-edit-text">Upload Avatar</span>
-                    </button>
-                </mark6-avatar-content>
-                -->
-                <mark6-avatar-upload (click)="uploadAvatar()"></mark6-avatar-upload>
-                <mark6-avatar-image [image]="user.avatarURL" [alt]="user.displayName"></mark6-avatar-image>
-            </mark6-avatar>
+            <mark6-editable-image [editMode]="true" [uploadProgress]="53">
+                <mark6-image [src]="user.avatarURL" [alt]="user.displayName"></mark6-image>
+            </mark6-editable-image>
 
             <h1>UserNaame
                 <span>@profileUrlName</span>
@@ -33,16 +24,10 @@
 
         <section class="main-content">
 
-            <mark6-cover [editMode]="true">
-                <mark6-avatar [editMode]="true" *ngIf="!resMaxDesktop.matches">
-                    <mark6-avatar-upload (click)="uploadAvatar()">
-                        <span>Upload Avatar</span>
-                    </mark6-avatar-upload>
-                    <mark6-avatar-image [image]="user.avatarURL" [alt]="user.displayName"></mark6-avatar-image>
-                </mark6-avatar>
-                <h1 *ngIf="!resMaxDesktop.matches">{{user.displayName}}</h1>
-                <mark6-cover-image [image]="user.coverURL" [alt]="user.displayName + '`s Profile Cover'"></mark6-cover-image>
-            </mark6-cover>
+            <mark6-editable-image [editMode]="true">
+                <!--<mark6-image [src]="user.coverURL" [width]="'2'" [height]="'1'" [alt]="user.displayName + '`s Profile Cover'"></mark6-image>-->
+                <img mark6-image [src]="user.coverURL">
+            </mark6-editable-image>
 
         </section>
 

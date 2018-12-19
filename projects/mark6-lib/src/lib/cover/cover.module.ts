@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {Mark6CoverComponent, Mark6CoverContentComponent, Mark6CoverContentEditComponent, Mark6CoverImageComponent} from './cover';
+import {Mark6CoverComponent, Mark6CoverContentComponent, Mark6CoverContentEditComponent} from './cover';
 
 
 @NgModule({
@@ -9,13 +9,11 @@ import {Mark6CoverComponent, Mark6CoverContentComponent, Mark6CoverContentEditCo
     ],
     exports: [
         Mark6CoverComponent,
-        Mark6CoverImageComponent,
         Mark6CoverContentComponent,
         Mark6CoverContentEditComponent
     ],
     declarations: [
         Mark6CoverComponent,
-        Mark6CoverImageComponent,
         Mark6CoverContentComponent,
         Mark6CoverContentEditComponent
     ]

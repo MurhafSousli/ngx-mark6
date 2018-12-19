@@ -24,30 +24,8 @@ export class Mark6AvatarComponent {
     }
 
     @Input() public editMode = false;
-    // Default Size that we use later to config the Cropper and create a version from the Original Uploaded File.
-    @Input() public size = '256x256';
     @Input() public uploadProgress = null;
-
-}
-
-
-/**
- * CoverImage - Component intended to be used within the `<mark6-cover>`.
- */
-@Component({
-    selector: 'mark6-avatar-image',
-    templateUrl: 'avatar-image.html',
-    styleUrls: ['./avatar-image.scss'],
-    encapsulation: ViewEncapsulation.None
-})
-export class Mark6AvatarImageComponent {
-
-    @HostBinding('class') public classes = 'mark6-avatar-image';
-
-    @Input() public image;
-    @Input() public alt;
-
-    public defaultImage = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mN0+A8AAYUBQcxKiF0AAAAASUVORK5CYII=';
+    @Input() public uploadProgressColor = '#e53935';
 
 }
 

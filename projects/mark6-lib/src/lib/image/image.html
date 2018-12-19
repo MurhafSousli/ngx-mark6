@@ -1,0 +1,5 @@
+<img class="mark6-image" *ngIf="src; else noSrc" [src]="src" [attr.alt]="alt"/>
+
+<ng-template #noSrc>
+    <div class="mark6-placeholder" [style.paddingTop.%]="100 / (width / height)" [style.backgroundColor]="backgroundColor"></div>
+</ng-template>
