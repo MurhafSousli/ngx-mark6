@@ -64,8 +64,12 @@ export class Mark6ImgComponent {
     @Input() src;
 }
 @Component({
-    template: '<div style="height:100px;width:100px" [style.backgroundColor]="backgroundColor"></div>'
+    template: `<div class="mark6-placeholder"
+    [style.paddingTop.%]="100 / (width / height)"
+    [style.backgroundColor]="backgroundColor"></div>`
 })
 export class Mark6BackgroundComponent {
-    @Input() backgroundColor;
+    @Input() public backgroundColor;
+    @Input() public width = 1;
+    @Input() public height = 1;
 }
