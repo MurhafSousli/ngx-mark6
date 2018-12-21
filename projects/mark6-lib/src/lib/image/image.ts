@@ -7,7 +7,7 @@ import {Component, Directive, ElementRef, HostBinding, Input, OnInit, Renderer2,
     // templateUrl: './image.html',
     template: `
         <ng-container #imgContainter *ngIf="imageLoaded">
-            <img (onload)="imageLoaded=true" class="mark6-image" *ngIf="src" [src]="src" [attr.alt]="alt"/>
+            <img class="mark6-image" *ngIf="src" [src]="src" [attr.alt]="alt"/>
         </ng-container>
         <div *ngIf="!imageLoaded" class="mark6-placeholder" [style.paddingTop.%]="100 / (width / height)" [style.backgroundColor]="backgroundColor"></div>
     `,
