@@ -14,7 +14,7 @@ export class Mark6ImageComponent {
     @Input() public alt = null;
     @Input() public width = 1;
     @Input() public height = 1;
-    @Input() public backgroundColor;
+    @Input() public backgroundColor = '#404040';
 
     @HostBinding('class') classes = 'mark6-image';
 
