@@ -6,7 +6,7 @@ import {Component, Directive, ElementRef, HostBinding, Input, OnInit, Renderer2,
     exportAs: 'mark6Image',
     // templateUrl: './image.html',
     template: `
-        <ng-container #imgContainter *ngIf="imageLoaded">
+        <ng-container *ngIf="imageLoaded">
             <img class="mark6-image" *ngIf="src" [src]="src" [attr.alt]="alt"/>
         </ng-container>
         <div *ngIf="!imageLoaded" class="mark6-placeholder" [style.paddingTop.%]="100 / (width / height)" [style.backgroundColor]="backgroundColor"></div>
