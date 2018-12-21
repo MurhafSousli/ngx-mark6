@@ -3,5 +3,6 @@
  */
 
 export * from './lib/image/image.module';
+export * from './lib/editable-image/editable-image.module';
 export * from './lib/drop-down/drop-down.module';
 export * from './lib/drop-down/drop-down.service';
