@@ -1,4 +1,4 @@
-import {Component, Directive, ElementRef, HostBinding, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
+import {Component, Directive, ElementRef, HostBinding, Input, OnChanges, SimpleChanges, ViewChild} from '@angular/core';
 
 
 @Component({
@@ -6,7 +6,7 @@ import {Component, Directive, ElementRef, HostBinding, Input, OnInit, Renderer2,
     exportAs: 'mark6Image',
     // templateUrl: './image.html',
     template: `
-        <img class="mark6-image" *ngIf="src" [src]="src" [attr.alt]="alt" (load)="loaded = true">
+        <img [style.display]="loaded" class="mark6-image" *ngIf="src" [src]="src" [attr.alt]="alt" (load)="loaded = true">
         <div
             *ngIf="!loaded"
             class="mark6-placeholder"
@@ -16,7 +16,7 @@ import {Component, Directive, ElementRef, HostBinding, Input, OnInit, Renderer2,
     `,
     styleUrls: ['./image.scss']
 })
-export class Mark6ImageComponent {
+export class Mark6ImageComponent implements OnChanges {
 
     @Input() public src = null;
     @Input() public alt = null;
@@ -27,6 +27,12 @@ export class Mark6ImageComponent {
     @HostBinding('class') classes = 'mark6-image';
 
     public loaded = false;
+
+    ngOnChanges(changes: SimpleChanges) {
+        if (changes.src) {
+            this.loaded = false;
+        }
+    }
 
 }
 
