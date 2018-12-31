@@ -1,4 +1,4 @@
-import {Component, Directive, ElementRef, HostBinding, Input, OnInit, Renderer2, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, Directive, ElementRef, HostBinding, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
 
 
 @Component({
@@ -6,17 +6,17 @@ import {Component, Directive, ElementRef, HostBinding, Input, OnInit, Renderer2,
     exportAs: 'mark6Image',
     // templateUrl: './image.html',
     template: `
-        <ng-container *ngIf="imageLoaded">
-            <img class="mark6-image" *ngIf="src" [src]="src" [attr.alt]="alt"/>
-        </ng-container>
-        <div *ngIf="!imageLoaded" class="mark6-placeholder" [style.paddingTop.%]="100 / (width / height)" [style.backgroundColor]="backgroundColor"></div>
+        <img class="mark6-image" *ngIf="src" [src]="src" [attr.alt]="alt" (load)="loaded = true">
+        <div
+            *ngIf="!loaded"
+            class="mark6-placeholder"
+            [style.paddingTop.%]="100 / (width / height)"
+            [style.backgroundColor]="backgroundColor">
+        </div>
     `,
-    styleUrls: ['./image.scss'],
-    encapsulation: ViewEncapsulation.None
+    styleUrls: ['./image.scss']
 })
-export class Mark6ImageComponent implements OnInit {
-
-    @ViewChild('imgContainer', {read: ElementRef}) container: ElementRef;
+export class Mark6ImageComponent {
 
     @Input() public src = null;
     @Input() public alt = null;
@@ -26,26 +26,13 @@ export class Mark6ImageComponent implements OnInit {
 
     @HostBinding('class') classes = 'mark6-image';
 
-    public imageLoaded = false;
-
-    constructor(private renderer: Renderer2) {}
-
-    ngOnInit() {
-        if (this.src) {
-            const img = this.renderer.createElement('img');
-            img.onload = () => {
-                this.imageLoaded = true;
-                this.renderer.appendChild(this.container.nativeElement, img);
-            };
-            img.src = this.src;
-        }
-    }
+    public loaded = false;
 
 }
 
 
 @Directive({
-    selector: `mark6-image, [mark6-image]`
+    selector: `mark6Image, [mark6Image]`
 })
 export class Mark6ImageDirective {
     @HostBinding('class') classes = 'mark6-image';
