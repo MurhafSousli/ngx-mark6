@@ -1,52 +1,67 @@
-import {Component, Directive, ElementRef, HostBinding, Input, OnInit, Renderer2, ViewChild, ViewEncapsulation} from '@angular/core';
-
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, TemplateRef } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { animate, style, transition, trigger } from '@angular/animations';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
-    selector: 'mark6-image',
-    exportAs: 'mark6Image',
-    // templateUrl: './image.html',
-    template: `
-        <ng-container *ngIf="imageLoaded">
-            <img class="mark6-image" *ngIf="src" [src]="src" [attr.alt]="alt"/>
-        </ng-container>
-        <div *ngIf="!imageLoaded" class="mark6-placeholder" [style.paddingTop.%]="100 / (width / height)" [style.backgroundColor]="backgroundColor"></div>
-    `,
-    styleUrls: ['./image.scss'],
-    encapsulation: ViewEncapsulation.None
+  selector: 'mark6-image',
+  exportAs: 'mark6Image',
+  templateUrl: './image.html',
+  styleUrls: ['./image.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    '[class.mark6-image]': 'true',
+    '[class.mark6-image-load-success]': '!!imageUrl',
+    '[class.mark6-image-load-failed]': '!!loadError'
+  },
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('300ms ease-in', style({opacity: 1}))
+      ])
+    ])
+  ],
 })
-export class Mark6ImageComponent implements OnInit {
 
-    @ViewChild('imgContainer', {read: ElementRef}) container: ElementRef;
+export class Mark6ImageComponent {
 
-    @Input() public src = null;
-    @Input() public alt = null;
-    @Input() public width = 1;
-    @Input() public height = 1;
-    @Input() public backgroundColor = '#404040';
+  /** Stream that emits the state */
+  readonly state = new BehaviorSubject<'loading' | 'success' | 'failed'>('loading');
 
-    @HostBinding('class') classes = 'mark6-image';
+  /** Image URL after load success */
+  imageUrl: SafeUrl;
 
-    public imageLoaded = false;
+  /** Load failed error */
+  loadError: Error;
 
-    constructor(private renderer: Renderer2) {}
+  /** Image source URL */
+  @Input() src: string;
 
-    ngOnInit() {
-        if (this.src) {
-            const img = this.renderer.createElement('img');
-            img.onload = () => {
-                this.imageLoaded = true;
-                this.renderer.appendChild(this.container.nativeElement, img);
-            };
-            img.src = this.src;
-        }
-    }
+  /** Image alt attribute */
+  @Input() alt: string;
 
-}
+  /** Custom loader template */
+  @Input() loadingTemplate: TemplateRef<any>;
 
+  /** Custom error template */
+  @Input() errorTemplate: TemplateRef<any>;
 
-@Directive({
-    selector: `mark6Image, [mark6Image]`
-})
-export class Mark6ImageDirective {
-    @HostBinding('class') classes = 'mark6-image';
+  /** Stream that emits when an error occurs */
+  @Output() error = new EventEmitter<Error>();
+
+  constructor(private _sanitizer: DomSanitizer) {
+  }
+
+  loadSuccess(blobUrl: string) {
+    this.imageUrl = this._sanitizer.bypassSecurityTrustUrl(blobUrl);
+    this.state.next('success');
+  }
+
+  loadFailed(err: Error) {
+    this.loadError = err;
+    this.state.next('failed');
+    this.error.emit(err);
+  }
+
 }

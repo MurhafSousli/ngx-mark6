@@ -1,5 +1,32 @@
-<img class="mark6-image" *ngIf="src; else noSrc" [src]="src" [attr.alt]="alt"/>
+<ng-container
+    [lazyImage]="src"
+    (loadSuccess)="loadSuccess($event)"
+    (loadFailed)="loadFailed($event)"
+    [ngSwitch]="state | async"
+>
+    <img
+        *ngSwitchCase="'success'"
+        @fadeIn
+        class="mark6-image"
+        [alt]="alt"
+        [src]="imageUrl"
+    />
 
-<ng-template #noSrc>
-    <div class="mark6-placeholder" [style.paddingTop.%]="100 / (width / height)" [style.backgroundColor]="backgroundColor"></div>
+    <div *ngSwitchCase="'failed'" class="mark6-image-error-template">
+        <ng-container *ngTemplateOutlet="errorTemplate || defaultErrorTemplate"></ng-container>
+    </div>
+
+    <div *ngSwitchCase="'loading'" class="mark6-image-loading-template">
+        <ng-container *ngTemplateOutlet="loadingTemplate || defaultLoadingTemplate"></ng-container>
+    </div>
+
+</ng-container>
+
+<ng-template #defaultErrorTemplate>
+    <h2>⚠</h2>
+    <p>Unable to load the image!</p>
+</ng-template>
+
+<ng-template #defaultLoadingTemplate>
+    <div class="mark6-image-placeholder"></div>
 </ng-template>
