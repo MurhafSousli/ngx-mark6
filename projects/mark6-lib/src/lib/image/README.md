@@ -6,9 +6,21 @@
 | ----------------- | -------------------------------------- |
 | [src]             | Image src path                         |
 | [alt]             | Image alt attribute                    |
-| [loadingTemplate] | Custom loading template (placeholder)  |
-| [errorTemplate]   | Custom error template                  |
-| (error)           | Stream that emits when an error occurs |
+
+**How to set custom aspect ratio?**
+
+Use SCSS variable `--aspect-ratio-h` and `--aspect-ratio-w`
+
+```xml
+<mark6-image class="custom-aspect-ratio" [src]="user.avatarURL" [alt]="user.displayName"></mark6-image>
+```
+
+```scss
+.custom-aspect-ratio {
+  --aspect-ratio-h: 1;
+  --aspect-ratio-w: 2;
+}
+```
 
 # LazyImage Directive
 
