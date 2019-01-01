@@ -1,46 +1,39 @@
 ::ng-deep {
     .mark6-image {
         position: relative;
-        height: 100%;
-        width: 100%;
         display: block;
-        overflow: hidden;
 
-        h2 {
-            color: coral;
-            margin: 0;
-            margin-bottom: 0.3em;
-            font-size: 3.5em;
+        // The following styles will give you control over the aspect ratio
+        // Image original aspect ratio will not be used
+
+        &::before {
+            content: '';
+            display: block;
+            padding-top: calc(
+                var(--aspect-ratio-h, 1) / var(--aspect-ratio-w, 1) * 100%
+            );
         }
-
-        img {
-            width: 100%;
+        > *:first-child {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
             height: 100%;
+            width: 100%;
         }
     }
 
-    .mark6-image-load-success {
-        // Styles applied on loading
-    }
-    .mark6-image-load-failed {
-        // Styles applied on error
-    }
+    // To use image original aspect ratio, comment the above styles and un-comment the following styles
 
-    .mark6-image-loading-template,
-    .mark6-image-error-template {
-        position: absolute;
-        z-index: 10;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
+    // .mark6-image img {
+    //     width: 100%;
+    //     height: auto;
+    // }
 
-    // Default placeholder
+    // =========================================================
+
+    // Default placeholder (REMOVE THE FOLLOWING STYLES)
 
     $wave-color: #fff !default;
     $placeholder-bg: gray !default;
@@ -48,6 +41,7 @@
     .mark6-image-placeholder {
         position: relative;
         overflow: hidden;
+        width: 100%;
         height: 100%;
         background-color: $placeholder-bg;
 
