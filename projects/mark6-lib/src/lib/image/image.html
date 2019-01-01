@@ -1,32 +1,24 @@
 <ng-container
     [lazyImage]="src"
     (loadSuccess)="loadSuccess($event)"
-    (loadFailed)="loadFailed($event)"
-    [ngSwitch]="state | async"
+    (loadFailed)="loadFailed()"
+    [ngSwitch]="state"
 >
     <img
         *ngSwitchCase="'success'"
-        @fadeIn
         class="mark6-image"
         [alt]="alt"
-        [src]="imageUrl"
+        [src]="url"
     />
 
     <div *ngSwitchCase="'failed'" class="mark6-image-error-template">
-        <ng-container *ngTemplateOutlet="errorTemplate || defaultErrorTemplate"></ng-container>
+        <!-- Replace the following line with your own error message or image -->
+        <h2>⚠</h2>
     </div>
 
     <div *ngSwitchCase="'loading'" class="mark6-image-loading-template">
-        <ng-container *ngTemplateOutlet="loadingTemplate || defaultLoadingTemplate"></ng-container>
+        <!-- Replace the following line with your own image placeholder -->
+        <div class="mark6-image-placeholder"></div>
     </div>
 
 </ng-container>
-
-<ng-template #defaultErrorTemplate>
-    <h2>⚠</h2>
-    <p>Unable to load the image!</p>
-</ng-template>
-
-<ng-template #defaultLoadingTemplate>
-    <div class="mark6-image-placeholder"></div>
-</ng-template>
